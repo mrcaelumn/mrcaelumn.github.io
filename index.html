@@ -2,497 +2,881 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adityano Widiata Ratu | Data & AI Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Adityano Widiata Ratu — Data Engineer & AI Specialist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
-      --bg: #0b0d10;
-      --panel: #12161b;
-      --soft: #1a2028;
-      --text: #f5f7fa;
-      --muted: #9aa4b2;
-      --accent: #5eead4;
-      --border: rgba(255,255,255,0.08);
-      --shadow: 0 20px 60px rgba(0,0,0,0.45);
+      --ink: #0f0e0d;
+      --paper: #f4f1eb;
+      --accent: #c8402a;
+      --accent2: #2a5fc8;
+      --muted: #7a7570;
+      --border: #d8d3ca;
+      --card: #fffdf9;
+      --mono: 'DM Mono', monospace;
+      --serif: 'DM Serif Display', serif;
+      --sans: 'Instrument Sans', sans-serif;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at top, #16202d 0%, var(--bg) 35%);
-      color: var(--text);
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
       line-height: 1.7;
+      overflow-x: hidden;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
+    /* ── GRAIN OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.4;
     }
 
-    .container {
-      width: min(1180px, 92%);
-      margin: 0 auto;
-    }
-
+    /* ── NAV ── */
     nav {
-      position: sticky;
-      top: 0;
-      backdrop-filter: blur(14px);
-      background: rgba(11, 13, 16, 0.72);
-      border-bottom: 1px solid var(--border);
-      z-index: 999;
-    }
-
-    .nav-content {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 0;
+      padding: 1.25rem 3rem;
+      background: rgba(244,241,235,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
     }
 
-    .logo {
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: 0.08rem;
-    }
-
-    .logo span {
-      color: var(--accent);
+    .nav-logo {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
     }
 
     .nav-links {
       display: flex;
-      gap: 1.5rem;
-      color: var(--muted);
-      font-size: 0.95rem;
+      gap: 2rem;
+      list-style: none;
     }
 
-    .nav-links a:hover {
-      color: var(--text);
-      transition: 0.2s ease;
-    }
-
-    .hero {
-      min-height: 92vh;
-      display: flex;
-      align-items: center;
-      padding: 5rem 0;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .eyebrow {
-      color: var(--accent);
-      font-weight: 600;
-      margin-bottom: 1rem;
-      letter-spacing: 0.08rem;
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      font-size: 0.82rem;
+      text-decoration: none;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    header {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 80px;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 3rem 5rem 3rem;
+      border-right: 1px solid var(--border);
+    }
+
+    .hero-tag {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.1s forwards;
     }
 
     h1 {
-      font-size: clamp(3rem, 8vw, 5.8rem);
-      line-height: 1;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 5vw, 5.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
       margin-bottom: 1.5rem;
-      font-weight: 800;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.25s forwards;
     }
 
-    .hero p {
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
       color: var(--muted);
-      max-width: 720px;
-      font-size: 1.08rem;
-      margin-bottom: 2rem;
+      max-width: 440px;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.4s forwards;
     }
 
-    .hero-actions {
+    .hero-cta {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.55s forwards;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      padding: 0.9rem 1.4rem;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: var(--panel);
-      color: var(--text);
-      font-weight: 600;
-      transition: 0.25s ease;
-      box-shadow: var(--shadow);
+      gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1.5px solid var(--ink);
+      color: var(--ink);
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-      border-color: rgba(94, 234, 212, 0.35);
-    }
+    .btn:hover { background: var(--ink); color: var(--paper); }
 
-    .btn.primary {
+    .btn-accent {
       background: var(--accent);
-      color: #071316;
-      border: none;
+      border-color: var(--accent);
+      color: white;
+    }
+    .btn-accent:hover { background: #a8321e; border-color: #a8321e; color: white; }
+
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 5rem 3rem;
     }
 
-    .hero-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    .hero-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
       border: 1px solid var(--border);
-      border-radius: 28px;
-      padding: 2rem;
-      box-shadow: var(--shadow);
-    }
-
-    .hero-card h3 {
-      margin-bottom: 1.2rem;
-      font-size: 1rem;
-      color: var(--muted);
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.5s forwards;
     }
 
     .stat {
-      margin-bottom: 1.5rem;
+      background: var(--card);
+      padding: 1.75rem;
     }
 
-    .stat strong {
-      display: block;
-      font-size: 2rem;
-      margin-bottom: 0.3rem;
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 2.5rem;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 0.25rem;
     }
 
-    section {
-      padding: 5rem 0;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .section-title span {
-      color: var(--accent);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.2rem;
-    }
-
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 1.5rem;
-      transition: 0.25s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(94, 234, 212, 0.2);
-    }
-
-    .card h3 {
-      margin-bottom: 0.8rem;
-      font-size: 1rem;
-    }
-
-    .card p,
-    .timeline p,
-    .timeline li {
+    .stat-label {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
       color: var(--muted);
-      font-size: 0.95rem;
     }
 
-    .chips {
+    .hero-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.65s forwards;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .contact-row a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .contact-row a:hover { color: var(--accent); }
+
+    .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ── SECTION LAYOUT ── */
+    section {
+      padding: 6rem 3rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .section-num {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.15em;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    /* ── EXPERIENCE ── */
+    .exp-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .exp-item {
+      background: var(--card);
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 0;
+    }
+
+    .exp-meta {
+      padding: 2rem;
+      border-right: 1px solid var(--border);
+    }
+
+    .exp-company {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .exp-title {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .exp-date {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    .exp-body {
+      padding: 2rem;
+    }
+
+    .exp-highlights {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .exp-highlights li {
+      font-size: 0.9rem;
+      color: var(--muted);
+      padding-left: 1.25rem;
+      position: relative;
+      font-weight: 300;
+    }
+
+    .exp-highlights li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.75rem;
+    }
+
+    /* ── SKILLS ── */
+    #skills { background: var(--ink); color: var(--paper); }
+    #skills h2 { color: var(--paper); }
+    #skills .section-num { color: rgba(244,241,235,0.4); }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1px;
+      background: rgba(244,241,235,0.1);
+      border: 1px solid rgba(244,241,235,0.1);
+    }
+
+    .skill-cat {
+      background: #181614;
+      padding: 2rem;
+    }
+
+    .skill-cat-name {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .skill-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-top: 1rem;
+      gap: 0.4rem;
     }
 
-    .chip {
-      background: var(--soft);
-      border: 1px solid var(--border);
-      padding: 0.5rem 0.85rem;
-      border-radius: 999px;
-      font-size: 0.82rem;
-      color: var(--muted);
+    .tag {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      padding: 0.3rem 0.7rem;
+      border: 1px solid rgba(244,241,235,0.15);
+      color: rgba(244,241,235,0.7);
+      letter-spacing: 0.05em;
     }
 
-    .timeline {
-      border-left: 1px solid var(--border);
-      margin-left: 0.5rem;
-      padding-left: 2rem;
+    /* ── EDUCATION ── */
+    .edu-grid {
       display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .edu-item {
+      background: var(--card);
+      padding: 2.5rem;
+    }
+
+    .edu-degree {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .edu-school {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .edu-detail {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+    .edu-thesis {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* ── PUBLICATIONS ── */
+    .pub-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .pub-item {
+      background: var(--card);
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
       gap: 2rem;
     }
 
-    .timeline-item {
-      position: relative;
+    .pub-title {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      flex: 1;
     }
 
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      left: -2.45rem;
-      top: 0.4rem;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: var(--accent);
+    .pub-meta {
+      text-align: right;
+      flex-shrink: 0;
     }
 
-    .timeline-item h3 {
-      font-size: 1.15rem;
-      margin-bottom: 0.2rem;
+    .pub-venue {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      color: var(--accent2);
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
     }
 
-    .timeline-item span {
-      color: var(--accent);
-      font-size: 0.9rem;
-      display: inline-block;
-      margin-bottom: 0.8rem;
-    }
-
-    footer {
-      padding: 3rem 0;
-      border-top: 1px solid var(--border);
+    .pub-date {
+      font-family: var(--mono);
+      font-size: 0.65rem;
       color: var(--muted);
-      text-align: center;
     }
 
+    /* ── CERTS ── */
+    .cert-strip {
+      display: flex;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .cert-item {
+      background: var(--card);
+      padding: 1.75rem;
+      flex: 1;
+    }
+
+    .cert-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .cert-name {
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+    .cert-issuer {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-name {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+    }
+
+    .footer-copy {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      h1 {
-        font-size: 3.5rem;
-      }
+      nav { padding: 1.25rem 1.5rem; }
+      .nav-links { gap: 1rem; }
+      header { grid-template-columns: 1fr; }
+      .hero-left { border-right: none; border-bottom: 1px solid var(--border); padding: 4rem 1.5rem 2.5rem; }
+      .hero-right { padding: 2.5rem 1.5rem; }
+      section { padding: 4rem 1.5rem; }
+      .exp-item { grid-template-columns: 1fr; }
+      .exp-meta { border-right: none; border-bottom: 1px solid var(--border); }
+      .edu-grid { grid-template-columns: 1fr; }
+      .cert-strip { flex-direction: column; }
+      .pub-item { flex-direction: column; }
+      .pub-meta { text-align: left; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; }
     }
   </style>
 </head>
 <body>
+
+  <!-- NAV -->
   <nav>
-    <div class="container nav-content">
-      <div class="logo">ADITYANO<span>.</span></div>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
+    <span class="nav-logo">awr — portfolio</span>
+    <ul class="nav-links">
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#publications">Publications</a></li>
+    </ul>
   </nav>
 
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="eyebrow">Data Engineering • AI Engineering • ML Systems</div>
-        <h1>Building scalable AI & data systems that actually ship.</h1>
-        <p>
-          Senior Data Engineer and AI Engineer focused on production-grade machine learning, distributed systems, fraud detection, and modern data platforms. Experienced across GCP, AWS, Kafka, Spark, Snowflake, BigQuery, LLM systems, and real-time architectures.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn primary" href="mailto:ratu.adityano@gmail.com">Contact Me</a>
-          <a class="btn" href="https://github.com/mrcaelumn" target="_blank">GitHub</a>
-          <a class="btn" href="https://www.linkedin.com/in/adityano-ratu" target="_blank">LinkedIn</a>
-        </div>
-      </div>
-
-      <div class="hero-card">
-        <h3>Professional Snapshot</h3>
-
-        <div class="stat">
-          <strong>8+ Years</strong>
-          <p>Engineering experience across AI, data infrastructure, analytics, and cloud platforms.</p>
-        </div>
-
-        <div class="stat">
-          <strong>MS in AI</strong>
-          <p>Master of Science in Computer Science & Engineering focused on AI in Smart Manufacturing.</p>
-        </div>
-
-        <div class="stat">
-          <strong>Production AI</strong>
-          <p>Built fraud detection systems, recommendation engines, OCR platforms, and LLM-powered agents.</p>
-        </div>
+  <!-- HERO -->
+  <header>
+    <div class="hero-left">
+      <p class="hero-tag">Data Engineer · AI Specialist · Jakarta, Indonesia</p>
+      <h1>Adityano<br><em>Widiata</em><br>Ratu</h1>
+      <p class="hero-desc">
+        Data alchemist — transforming complex data into gold. Senior-level expertise in data engineering, AI architecture, deep learning, and building infrastructure that scales.
+      </p>
+      <div class="hero-cta">
+        <a href="mailto:ratu.adityano@gmail.com" class="btn btn-accent">Get in touch</a>
+        <a href="https://linkedin.com/in/adityano-ratu" target="_blank" class="btn">LinkedIn</a>
+        <a href="https://github.com/mrcaelumn" target="_blank" class="btn">GitHub</a>
       </div>
     </div>
-  </section>
-
-  <section id="about">
-    <div class="container">
-      <h2 class="section-title">About <span>Me</span></h2>
-
-      <div class="card">
-        <p>
-          I specialize in designing scalable data systems and AI architectures that bridge machine learning research with production engineering. My background spans distributed data pipelines, deep learning, computer vision, generative AI, and real-time analytics.
-        </p>
-
-        <div class="chips">
-          <div class="chip">Python</div>
-          <div class="chip">Spark</div>
-          <div class="chip">Kafka</div>
-          <div class="chip">Snowflake</div>
-          <div class="chip">BigQuery</div>
-          <div class="chip">TensorFlow</div>
-          <div class="chip">PyTorch</div>
-          <div class="chip">Kubernetes</div>
-          <div class="chip">LLM Systems</div>
-          <div class="chip">GCP</div>
-          <div class="chip">AWS</div>
+    <div class="hero-right">
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">8+</div>
+          <div class="stat-label">Years of experience</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">MS</div>
+          <div class="stat-label">Computer Science, Honours</div>
         </div>
       </div>
+      <div class="hero-contact">
+        <div class="contact-row"><span class="dot"></span> ratu.adityano@gmail.com</div>
+        <div class="contact-row"><span class="dot"></span> +62 821 9491 1101</div>
+        <div class="contact-row"><span class="dot"></span> <a href="https://linkedin.com/in/adityano-ratu" target="_blank">linkedin.com/in/adityano-ratu</a></div>
+        <div class="contact-row"><span class="dot"></span> <a href="https://github.com/mrcaelumn" target="_blank">github.com/mrcaelumn</a></div>
+      </div>
     </div>
-  </section>
+  </header>
 
+  <!-- EXPERIENCE -->
   <section id="experience">
-    <div class="container">
-      <h2 class="section-title">Selected <span>Experience</span></h2>
+    <div class="section-header reveal">
+      <span class="section-num">01</span>
+      <h2>Experience</h2>
+    </div>
+    <div class="exp-grid">
 
-      <div class="timeline">
-        <div class="timeline-item">
-          <h3>Senior Data Engineer — Gravion AI</h3>
-          <span>2025 — 2026</span>
-          <p>
-            Built real-time and batch fraud detection systems integrating machine learning, graph analysis, scalable inference APIs, AI agents, and monitoring frameworks.
-          </p>
+      <div class="exp-item reveal">
+        <div class="exp-meta">
+          <div class="exp-title">Senior Data Engineer</div>
+          <div class="exp-company">Gravion AI</div>
+          <div class="exp-date">Apr 2025 - Mar 2026</div>
         </div>
-
-        <div class="timeline-item">
-          <h3>Senior Data Engineer — Dentsu</h3>
-          <span>2024 — 2025</span>
-          <p>
-            Designed scalable ETL infrastructure and analytics systems supporting enterprise AI initiatives and predictive modeling.
-          </p>
-        </div>
-
-        <div class="timeline-item">
-          <h3>Lead Data Engineer — Grab</h3>
-          <span>2024</span>
-          <p>
-            Led large-scale data architecture optimization, automated data quality processes, and improved platform scalability for fulfillment analytics.
-          </p>
-        </div>
-
-        <div class="timeline-item">
-          <h3>Lead Data Engineer — BitHealth</h3>
-          <span>2023 — 2024</span>
-          <p>
-            Architected healthcare AI data platforms using Snowflake, BigQuery, and cloud-native pipelines with governance and compliance controls.
-          </p>
+        <div class="exp-body">
+          <ul class="exp-highlights">
+            <li>Led end-to-end real-time & batch fraud detection systems combining ML, graph analysis, and scalable pipelines</li>
+            <li>Designed, trained, and optimised ML models for fraud detection and clustering</li>
+            <li>Built internal ML framework automating feature engineering, training, and deployment</li>
+            <li>Developed network-based fraud frameworks identifying syndicate-level patterns</li>
+            <li>Built AI-driven investigation agents for fraud case explanation</li>
+          </ul>
         </div>
       </div>
+
+
+<div class="exp-item reveal">
+        <div class="exp-meta">
+          <div class="exp-title">Senior Data Engineer</div>
+          <div class="exp-company">Dentsu</div>
+          <div class="exp-date">Nov 2024 – April 2025</div>
+        </div>
+        <div class="exp-body">
+          <ul class="exp-highlights">
+            <li>Built Toyota's data infrastructure supporting AI & real-time analytics initiatives</li>
+            <li>Optimised BCA's data ingestion, transformation, and storage for AI-driven insights</li>
+            <li>Designed scalable ETL pipelines with multi-stakeholder governance</li>
+            <li>Deployed ML models to production with AI teams</li>
+          </ul>
+        </div>
+      </div>
+      
+      
+      <div class="exp-item reveal">
+        <div class="exp-meta">
+          <div class="exp-title">Lead Data Engineer</div>
+          <div class="exp-company">Grab</div>
+          <div class="exp-date">Feb 2024 – May 2024</div>
+        </div>
+        <div class="exp-body">
+          <ul class="exp-highlights">
+            <li>Maintained data quality across diverse sources for the Fulfillment team</li>
+            <li>Analysed hundreds of thousands of tables to identify optimisation strategies</li>
+            <li>Revamped data architecture for improved scalability and reduced latency</li>
+            <li>Automated data collection & cleaning for massive datasets</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-meta">
+          <div class="exp-title">AI Engineer</div>
+          <div class="exp-company">Freelancer</div>
+          <div class="exp-date">Feb 2023 – Sep 2024</div>
+        </div>
+        <div class="exp-body">
+          <ul class="exp-highlights">
+            <li>Built recommendation system & sentiment analysis for a tourism application</li>
+            <li>Fine-tuned large language models for specific production applications</li>
+            <li>Developed translation app with integrated OCR technology</li>
+            <li>Designed metahuman (3D figure) with chatbot, TTS, and API inference</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-meta">
+          <div class="exp-title">Lead Data Engineer</div>
+          <div class="exp-company">BitHealth</div>
+          <div class="exp-date">May 2023 – Feb 2024</div>
+        </div>
+        <div class="exp-body">
+          <ul class="exp-highlights">
+            <li>Architected scalable pipelines on Snowflake, BigQuery & GCS for healthcare AI</li>
+            <li>Implemented HIPAA-aligned data governance strategy</li>
+            <li>Integrated AI models into healthcare platforms for predictive analytics</li>
+            <li>Led and mentored a team of data engineers and developers</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-meta">
+          <div class="exp-title">Senior Big Data Engineer</div>
+          <div class="exp-company">Detikcom</div>
+          <div class="exp-date">May 2018 – Jan 2021</div>
+        </div>
+        <div class="exp-body">
+          <ul class="exp-highlights">
+            <li>Built streaming & batch pipelines for Indonesia's #1 news portal</li>
+            <li>Developed recommendation engine increasing product click rates by 500%</li>
+            <li>Engineered real-time analytics system replacing Google Analytics internally</li>
+            <li>Led GCP cloud migration improving scalability and performance</li>
+          </ul>
+        </div>
+      </div>
+
     </div>
   </section>
 
+  <!-- SKILLS -->
   <section id="skills">
-    <div class="container">
-      <h2 class="section-title">Technical <span>Stack</span></h2>
+    <div class="section-header reveal">
+      <span class="section-num">02</span>
+      <h2>Skills & Stack</h2>
+    </div>
+    <div class="skills-grid">
 
-      <div class="grid">
-        <div class="card">
-          <h3>Languages</h3>
-          <p>Python, Go, Scala, Java, SQL</p>
+      <div class="skill-cat reveal">
+        <div class="skill-cat-name">Languages</div>
+        <div class="skill-tags">
+          <span class="tag">Python</span><span class="tag">Go</span><span class="tag">Scala</span><span class="tag">Java</span><span class="tag">SQL</span>
         </div>
+      </div>
 
-        <div class="card">
-          <h3>Data Engineering</h3>
-          <p>Spark, Kafka, Airflow, Flink, Beam, Hadoop, Airbyte</p>
+      <div class="skill-cat reveal">
+        <div class="skill-cat-name">Cloud Platforms</div>
+        <div class="skill-tags">
+          <span class="tag">GCP</span><span class="tag">AWS</span>
         </div>
+      </div>
 
-        <div class="card">
-          <h3>AI / ML</h3>
-          <p>TensorFlow, PyTorch, HuggingFace, LangChain, OpenCV, scikit-learn</p>
+      <div class="skill-cat reveal">
+        <div class="skill-cat-name">Data Tools</div>
+        <div class="skill-tags">
+          <span class="tag">Apache Kafka</span><span class="tag">Apache Spark</span><span class="tag">Apache Flink</span><span class="tag">Apache Beam</span><span class="tag">Airflow</span><span class="tag">Airbyte</span><span class="tag">Hadoop</span><span class="tag">Pandas</span>
         </div>
+      </div>
 
-        <div class="card">
-          <h3>Cloud</h3>
-          <p>Google Cloud Platform, AWS, Kubernetes, Docker</p>
+      <div class="skill-cat reveal">
+        <div class="skill-cat-name">AI / ML Stack</div>
+        <div class="skill-tags">
+          <span class="tag">TensorFlow</span><span class="tag">PyTorch</span><span class="tag">Keras</span><span class="tag">HuggingFace</span><span class="tag">Langchain</span><span class="tag">RAG</span><span class="tag">Fine-tuning</span><span class="tag">OpenCV</span><span class="tag">spaCy</span><span class="tag">scikit-learn</span>
         </div>
+      </div>
 
-        <div class="card">
-          <h3>Databases</h3>
-          <p>Snowflake, BigQuery, PostgreSQL, MongoDB, Cassandra</p>
+      <div class="skill-cat reveal">
+        <div class="skill-cat-name">LLMs</div>
+        <div class="skill-tags">
+          <span class="tag">Azure GPT</span><span class="tag">OpenAI</span><span class="tag">Google Gemini</span><span class="tag">AWS Claude</span>
         </div>
+      </div>
 
-        <div class="card">
-          <h3>Visualization</h3>
-          <p>PowerBI, Tableau, Looker, Superset</p>
+      <div class="skill-cat reveal">
+        <div class="skill-cat-name">Data Warehouse</div>
+        <div class="skill-tags">
+          <span class="tag">BigQuery</span><span class="tag">Snowflake</span><span class="tag">S3</span><span class="tag">Cloud Storage</span><span class="tag">Presto</span>
+        </div>
+      </div>
+
+      <div class="skill-cat reveal">
+        <div class="skill-cat-name">Databases</div>
+        <div class="skill-tags">
+          <span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">Elasticsearch</span><span class="tag">Cassandra</span>
+        </div>
+      </div>
+
+      <div class="skill-cat reveal">
+        <div class="skill-cat-name">DevOps & Monitoring</div>
+        <div class="skill-tags">
+          <span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Git</span><span class="tag">GitLab CI</span><span class="tag">Datadog</span><span class="tag">Grafana</span><span class="tag">Prometheus</span>
+        </div>
+      </div>
+
+      <div class="skill-cat reveal">
+        <div class="skill-cat-name">APIs</div>
+        <div class="skill-tags">
+          <span class="tag">FastAPI</span><span class="tag">Django</span><span class="tag">Flask</span><span class="tag">Goa Design</span>
+        </div>
+      </div>
+
+      <div class="skill-cat reveal">
+        <div class="skill-cat-name">Visualisation</div>
+        <div class="skill-tags">
+          <span class="tag">Power BI</span><span class="tag">Tableau</span><span class="tag">Looker</span><span class="tag">Superset</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="section-header reveal">
+      <span class="section-num">03</span>
+      <h2>Education</h2>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-item reveal">
+        <div class="edu-degree">Master of Science · Honours</div>
+        <div class="edu-school">Yuan Ze University</div>
+        <div class="edu-detail">Taoyuan, Taiwan · Jan 2023<br>Computer Science & Engineering<br>Major: AI in Smart Manufacturing</div>
+        <div class="edu-thesis">Thesis: A few-shot model based mura detection model with unsupervised adversarial learning.</div>
+      </div>
+      <div class="edu-item reveal">
+        <div class="edu-degree">Bachelor of Science · Honours</div>
+        <div class="edu-school">Universitas Klabat</div>
+        <div class="edu-detail">Manado, Indonesia · Dec 2015<br>Computer Science<br>Major: Informatics</div>
+        <div class="edu-thesis">Student Association & Council President · Software Engineering, Web & Mobile Development</div>
+      </div>
+    </div>
+
+    <!-- Certificates -->
+    <div style="margin-top: 1px;">
+      <div class="cert-strip">
+        <div class="cert-item reveal">
+          <div class="cert-icon">☁️</div>
+          <div class="cert-name">Professional Cloud Architect</div>
+          <div class="cert-issuer">Google Cloud Certified</div>
+        </div>
+        <div class="cert-item reveal">
+          <div class="cert-icon">🤖</div>
+          <div class="cert-name">Managing ML Projects with Google Cloud</div>
+          <div class="cert-issuer">Google Cloud</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section>
-    <div class="container">
-      <h2 class="section-title">Education & <span>Research</span></h2>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Yuan Ze University</h3>
-          <p>
-            Master of Science in Computer Science & Engineering — Artificial Intelligence in Smart Manufacturing.
-          </p>
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <div class="section-header reveal">
+      <span class="section-num">04</span>
+      <h2>Publications</h2>
+    </div>
+    <div class="pub-list">
+      <div class="pub-item reveal">
+        <div class="pub-title">Unsupervised Few-Shot GAN for Mura Defect Detection</div>
+        <div class="pub-meta">
+          <div class="pub-venue">IEEE Transactions on Industrial Informatics</div>
+          <div class="pub-date">May 2024</div>
         </div>
-
-        <div class="card">
-          <h3>Research Focus</h3>
-          <p>
-            Deep learning, computer vision, anomaly detection, few-shot learning, generative models, and intelligent systems.
-          </p>
+      </div>
+      <div class="pub-item reveal">
+        <div class="pub-title">Sulutguideliness</div>
+        <div class="pub-meta">
+          <div class="pub-venue">UNKLAB · IThinkSmart</div>
+          <div class="pub-date">Nov 2015</div>
         </div>
-
-        <div class="card">
-          <h3>Certifications</h3>
-          <p>
-            Google Cloud Professional Cloud Architect & Machine Learning Project Management.
-          </p>
+      </div>
+      <div class="pub-item reveal">
+        <div class="pub-title">Magic Pen: Remote Control Presenter</div>
+        <div class="pub-meta">
+          <div class="pub-venue">KNSI Conference</div>
+          <div class="pub-date">Feb 2015</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="contact">
-    <div class="container">
-      <div class="card" style="text-align:center; padding: 3rem;">
-        <h2 class="section-title">Let's Build Something <span>Serious</span></h2>
-        <p style="max-width: 720px; margin: 0 auto 2rem auto;">
-          Open to senior engineering, AI systems, platform architecture, and consulting opportunities.
-        </p>
-
-        <div class="hero-actions" style="justify-content:center;">
-          <a class="btn primary" href="mailto:ratu.adityano@gmail.com">Email Me</a>
-          <a class="btn" href="https://github.com/mrcaelumn" target="_blank">GitHub</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <!-- FOOTER -->
   <footer>
-    <div class="container">
-      © 2026 Adityano Widiata Ratu — Built for GitHub Pages.
-    </div>
+    <div class="footer-name">Adityano Widiata Ratu</div>
+    <div class="footer-copy">© 2025 · Jakarta, Indonesia · ratu.adityano@gmail.com</div>
   </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 60);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
 </body>
 </html>
