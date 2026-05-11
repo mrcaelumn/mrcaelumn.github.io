@@ -1,97 +1,498 @@
-<h1 align="center">Hi 👋, I'm Adit</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adityano Widiata Ratu | Data & AI Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --panel: #12161b;
+      --soft: #1a2028;
+      --text: #f5f7fa;
+      --muted: #9aa4b2;
+      --accent: #5eead4;
+      --border: rgba(255,255,255,0.08);
+      --shadow: 0 20px 60px rgba(0,0,0,0.45);
+    }
 
--------------------
-&emsp;
-<h3 align="left">Hi 👋, I'm Adityano Ratu, AI Engineer based in Indonesia. An AI Alchemist - a master of transforming data into gold! Armed with a Master's degree in Computer Science and senior-level experience in data engineering, this researcher has a talent for turning complex data into valuable insights.</h3>
-&emsp;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
--------------------
-&emsp;
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top, #16202d 0%, var(--bg) 35%);
+      color: var(--text);
+      line-height: 1.7;
+    }
 
-<!-- - 🔭 I’m currently working on [Mentor Bot](https://mentor.love/) for CYF Products.  -->
-- 💀 mostly working on **private repositories**
-<!-- - 📚 I'm also doing the [Immersive Engineering Course](https://github.com/CodeYourFuture/immersive-go-course), a program aimed at Site Reliability Engineering designed by CodeYourFuture in partnership with [Slack](https://slack.com/). -->
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-- 🌱 I’m currently learning **Generative Model and Real-time Recommendations Systems**
+    .container {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+    }
 
-- 💬 Ask me about **Computer Vision, API, SQL/NoSQL Databases, GCP**
+    nav {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(14px);
+      background: rgba(11, 13, 16, 0.72);
+      border-bottom: 1px solid var(--border);
+      z-index: 999;
+    }
 
-&emsp;
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
 
-## Me around the web:
--------------------
+    .logo {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08rem;
+    }
 
+    .logo span {
+      color: var(--accent);
+    }
 
-&emsp;
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
 
- <div align="center"  class="icons-social" style="margin-left: 10px;">
-        <a   target="_blank" href="https://www.linkedin.com/in/adityano-ratu">
-			<img src="https://img.icons8.com/doodle/40/000000/linkedin--v2.png" style="margin-left: 10px;" ></a>
-        <a style="margin-left: 10px;" target="_blank" href="https://github.com/mrcaelumn">
-		<img src="https://img.icons8.com/doodle/40/000000/github--v1.png"></a>
- </div>
+    .nav-links a:hover {
+      color: var(--text);
+      transition: 0.2s ease;
+    }
 
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      padding: 5rem 0;
+    }
 
-&emsp;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 4rem;
+      align-items: center;
+    }
 
-## 🛠️ My Skills
--------------------
-### Programming languages:
-&emsp;
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![GO](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![Scala](https://img.shields.io/badge/Scala-DC322F?style=for-the-badge&logo=scala&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
-![Bash](https://img.shields.io/badge/Shell_Script-121011?style=for-the-badge&logo=gnu-bash&logoColor=white)
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      letter-spacing: 0.08rem;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+    }
 
-### Frontend development:
-&emsp;
-![React](https://img.shields.io/badge/-React-000?&logo=React)
-![Redux](https://img.shields.io/badge/-Redux-000?&logo=Redux)
-![Next.js](https://img.shields.io/badge/-Next.js-000?&logo=Next.js)
-![Material-UI](https://img.shields.io/badge/-Material--UI-000?&logo=Material-UI)
-![Chakra UI](https://img.shields.io/badge/-Chakra%20UI-000?&logo=Chakra-UI)
-![SCSS](https://img.shields.io/badge/-SCSS-000?&logo=Sass)
-![CSS](https://img.shields.io/badge/-CSS-000?&logo=CSS3)
-![HTML](https://img.shields.io/badge/-HTML-000?&logo=HTML5)
-![Chart.js](https://img.shields.io/badge/-Chart.js-000?&logo=Chart.js)
-### Misc tools:
-&emsp;
-![Git](https://img.shields.io/badge/-Git-000?&logo=Git)
-![GitHub](https://img.shields.io/badge/-GitHub-000?&logo=GitHub)
-![GitLab](https://img.shields.io/badge/-GitLab-000?&logo=GitLab)
-![Docker](https://img.shields.io/badge/-Docker-000?&logo=Docker)
-![Jest](https://img.shields.io/badge/-Jest-000?&logo=Jest)
-![Cypress](https://img.shields.io/badge/-Cypress-000?&logo=Cypress)
-![Jira](https://img.shields.io/badge/-Jira-000?&logo=Jira)
-![VS Code](https://img.shields.io/badge/-VS%20Code-000?&logo=Visual-Studio-Code)
-![Postman](https://img.shields.io/badge/-Postman-000?&logo=Postman)
+    h1 {
+      font-size: clamp(3rem, 8vw, 5.8rem);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+      font-weight: 800;
+    }
 
-### Services & Frameworks: 
-&emsp;
-![Hasura](https://img.shields.io/badge/-Hasura-000?&logo=Hasura)
-![Auth0](https://img.shields.io/badge/-Auth0-000?&logo=Auth0)
-![Serverless](https://img.shields.io/badge/-Serverless-000?&logo=Serverless)
+    .hero p {
+      color: var(--muted);
+      max-width: 720px;
+      font-size: 1.08rem;
+      margin-bottom: 2rem;
+    }
 
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
 
-### Databases:
-&emsp;
-![MongoDB](https://img.shields.io/badge/-MongoDB-000?&logo=MongoDB)
-![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-000?&logo=PostgreSQL)
-![MySQL](https://img.shields.io/badge/-MySQL-000?&logo=MySQL)
-![Redis](https://img.shields.io/badge/-Redis-000?&logo=Redis)
-![SQLite](https://img.shields.io/badge/-SQLite-000?&logo=SQLite)
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 1.4rem;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--text);
+      font-weight: 600;
+      transition: 0.25s ease;
+      box-shadow: var(--shadow);
+    }
 
-### SRE & DevOps:
-&emsp;
-![AWS](https://img.shields.io/badge/-AWS-000?&logo=Amazon-AWS)
-![Azure](https://img.shields.io/badge/-Azure-000?&logo=Microsoft-Azure)
-![Terraform](https://img.shields.io/badge/-Terraform-000?&logo=Terraform)
-![Kubernetes](https://img.shields.io/badge/-Kubernetes-000?&logo=Kubernetes)
-![Consul](https://img.shields.io/badge/-Consul-000?&logo=Consul)
-![Prometheus](https://img.shields.io/badge/-Prometheus-000?&logo=Prometheus)
-![Grafana](https://img.shields.io/badge/-Grafana-000?&logo=Grafana)
-![Nginx](https://img.shields.io/badge/-Nginx-000?&logo=Nginx)
-![Chef](https://img.shields.io/badge/-Chef-000?&logo=Chef)
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(94, 234, 212, 0.35);
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #071316;
+      border: none;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+      color: var(--muted);
+    }
+
+    .stat {
+      margin-bottom: 1.5rem;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 2rem;
+      margin-bottom: 0.3rem;
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .section-title span {
+      color: var(--accent);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 1.5rem;
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(94, 234, 212, 0.2);
+    }
+
+    .card h3 {
+      margin-bottom: 0.8rem;
+      font-size: 1rem;
+    }
+
+    .card p,
+    .timeline p,
+    .timeline li {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .chip {
+      background: var(--soft);
+      border: 1px solid var(--border);
+      padding: 0.5rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .timeline {
+      border-left: 1px solid var(--border);
+      margin-left: 0.5rem;
+      padding-left: 2rem;
+      display: grid;
+      gap: 2rem;
+    }
+
+    .timeline-item {
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -2.45rem;
+      top: 0.4rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .timeline-item h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-item span {
+      color: var(--accent);
+      font-size: 0.9rem;
+      display: inline-block;
+      margin-bottom: 0.8rem;
+    }
+
+    footer {
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-content">
+      <div class="logo">ADITYANO<span>.</span></div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Data Engineering • AI Engineering • ML Systems</div>
+        <h1>Building scalable AI & data systems that actually ship.</h1>
+        <p>
+          Senior Data Engineer and AI Engineer focused on production-grade machine learning, distributed systems, fraud detection, and modern data platforms. Experienced across GCP, AWS, Kafka, Spark, Snowflake, BigQuery, LLM systems, and real-time architectures.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="mailto:ratu.adityano@gmail.com">Contact Me</a>
+          <a class="btn" href="https://github.com/mrcaelumn" target="_blank">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>Professional Snapshot</h3>
+
+        <div class="stat">
+          <strong>8+ Years</strong>
+          <p>Engineering experience across AI, data infrastructure, analytics, and cloud platforms.</p>
+        </div>
+
+        <div class="stat">
+          <strong>MS in AI</strong>
+          <p>Master of Science in Computer Science & Engineering focused on AI in Smart Manufacturing.</p>
+        </div>
+
+        <div class="stat">
+          <strong>Production AI</strong>
+          <p>Built fraud detection systems, recommendation engines, OCR platforms, and LLM-powered agents.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About <span>Me</span></h2>
+
+      <div class="card">
+        <p>
+          I specialize in designing scalable data systems and AI architectures that bridge machine learning research with production engineering. My background spans distributed data pipelines, deep learning, computer vision, generative AI, and real-time analytics.
+        </p>
+
+        <div class="chips">
+          <div class="chip">Python</div>
+          <div class="chip">Spark</div>
+          <div class="chip">Kafka</div>
+          <div class="chip">Snowflake</div>
+          <div class="chip">BigQuery</div>
+          <div class="chip">TensorFlow</div>
+          <div class="chip">PyTorch</div>
+          <div class="chip">Kubernetes</div>
+          <div class="chip">LLM Systems</div>
+          <div class="chip">GCP</div>
+          <div class="chip">AWS</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title">Selected <span>Experience</span></h2>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Senior Data Engineer — Gravion AI</h3>
+          <span>2025 — 2026</span>
+          <p>
+            Built real-time and batch fraud detection systems integrating machine learning, graph analysis, scalable inference APIs, AI agents, and monitoring frameworks.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <h3>Senior Data Engineer — Dentsu</h3>
+          <span>2024 — 2025</span>
+          <p>
+            Designed scalable ETL infrastructure and analytics systems supporting enterprise AI initiatives and predictive modeling.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <h3>Lead Data Engineer — Grab</h3>
+          <span>2024</span>
+          <p>
+            Led large-scale data architecture optimization, automated data quality processes, and improved platform scalability for fulfillment analytics.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <h3>Lead Data Engineer — BitHealth</h3>
+          <span>2023 — 2024</span>
+          <p>
+            Architected healthcare AI data platforms using Snowflake, BigQuery, and cloud-native pipelines with governance and compliance controls.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Technical <span>Stack</span></h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Languages</h3>
+          <p>Python, Go, Scala, Java, SQL</p>
+        </div>
+
+        <div class="card">
+          <h3>Data Engineering</h3>
+          <p>Spark, Kafka, Airflow, Flink, Beam, Hadoop, Airbyte</p>
+        </div>
+
+        <div class="card">
+          <h3>AI / ML</h3>
+          <p>TensorFlow, PyTorch, HuggingFace, LangChain, OpenCV, scikit-learn</p>
+        </div>
+
+        <div class="card">
+          <h3>Cloud</h3>
+          <p>Google Cloud Platform, AWS, Kubernetes, Docker</p>
+        </div>
+
+        <div class="card">
+          <h3>Databases</h3>
+          <p>Snowflake, BigQuery, PostgreSQL, MongoDB, Cassandra</p>
+        </div>
+
+        <div class="card">
+          <h3>Visualization</h3>
+          <p>PowerBI, Tableau, Looker, Superset</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">Education & <span>Research</span></h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Yuan Ze University</h3>
+          <p>
+            Master of Science in Computer Science & Engineering — Artificial Intelligence in Smart Manufacturing.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Research Focus</h3>
+          <p>
+            Deep learning, computer vision, anomaly detection, few-shot learning, generative models, and intelligent systems.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Certifications</h3>
+          <p>
+            Google Cloud Professional Cloud Architect & Machine Learning Project Management.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="card" style="text-align:center; padding: 3rem;">
+        <h2 class="section-title">Let's Build Something <span>Serious</span></h2>
+        <p style="max-width: 720px; margin: 0 auto 2rem auto;">
+          Open to senior engineering, AI systems, platform architecture, and consulting opportunities.
+        </p>
+
+        <div class="hero-actions" style="justify-content:center;">
+          <a class="btn primary" href="mailto:ratu.adityano@gmail.com">Email Me</a>
+          <a class="btn" href="https://github.com/mrcaelumn" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © 2026 Adityano Widiata Ratu — Built for GitHub Pages.
+    </div>
+  </footer>
+</body>
+</html>
